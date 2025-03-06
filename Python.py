@@ -16,11 +16,18 @@ def decimal_to_hex(decimal_value):
     return hexadecimal  # Return the hexadecimal value for testing
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        try:
-            decimal_value = int(sys.argv[1])
-            decimal_to_hex(decimal_value)
-        except ValueError:
-            print("Please provide a valid integer.")
-    else:
-        print("Usage: python script.py <decimal_number>")
+    # Check if argument is provided
+    if len(sys.argv) < 2:
+        print("Error: No input provided. Usage: python Dec2Hex.py <decimal_number>")
+        sys.exit(1)  # Exit with an error code
+
+    # Validate and process input
+    try:
+        decimal_value = int(sys.argv[1])
+        if decimal_value < 0:
+            print("Error: Please enter a non-negative integer.")
+            sys.exit(1)
+        decimal_to_hex(decimal_value)
+    except ValueError:
+        print("Error: Invalid input. Please provide a valid integer.")
+        sys.exit(1)
