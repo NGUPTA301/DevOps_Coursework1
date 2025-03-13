@@ -26,9 +26,9 @@ if __name__ == "__main__":
     try:
         decimal_value = int(sys.argv[1])  # Convert input to integer
         if decimal_value < 0:
-            print("Error: Please provide a non-negative integer.")
+            print("Error: Please provide a non-negative integer.I just updated the description")
             sys.exit(1)  # Exit for negative numbers
         decimal_to_hex(decimal_value)
     except ValueError:
-        print("Error: Please provide a valid integer.")
+        print("Error: Please provide a valid integer.I am going to push it")
         sys.exit(1)  # Exit with an error code
